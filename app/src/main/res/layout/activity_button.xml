@@ -17,13 +17,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/mainField">
+        android:background="@color/mainField"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3">
 
             <ImageButton
                 android:layout_width="match_parent"
@@ -31,7 +33,10 @@
                 android:layout_weight="1"
                 android:src="@mipmap/ic_thumb_up_black_24dp"
                 android:background="@color/likeButton"
-                android:onClick="onLikeClick"/>
+                android:onClick="onLikeClick"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_gravity="center_vertical" />
 
             <ImageButton
                 android:layout_width="match_parent"
@@ -39,8 +44,35 @@
                 android:layout_weight="1"
                 android:src="@mipmap/ic_thumb_down_black_24dp"
                 android:background="@color/dislikeButton"
-                android:onClick="onDislikeClick"/>
+                android:onClick="onDislikeClick"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/play_order"
+                android:layout_marginLeft="18dp"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/random_player"
+                android:layout_marginLeft="18dp"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/post_order_player"
+                android:layout_marginLeft="18dp"/>
 
         </LinearLayout>
 
