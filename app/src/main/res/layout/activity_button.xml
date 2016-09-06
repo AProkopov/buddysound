@@ -31,7 +31,8 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:src="@mipmap/ic_thumb_up_black_24dp"
-                android:background="@color/likeButton"
+
+                android:background="@drawable/rouncorner"
                 android:onClick="onLikeClick"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
@@ -61,17 +62,24 @@
                 android:text="@string/play_order"
                 android:layout_marginLeft="18dp"/>
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/random_player"
-                android:layout_marginLeft="18dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/post_order_player"
-                android:layout_marginLeft="18dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/random_player"
+                    android:layout_marginLeft="18dp"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_order_player"
+                    android:layout_marginLeft="18dp"/>
+
+            </RadioGroup>
+
 
         </LinearLayout>
 

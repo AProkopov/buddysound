@@ -27,7 +27,7 @@ public class ButtonActivity extends AppCompatActivity {
         mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
 
         mAssetManager = getAssets();
-        trombonSound = loadSound("cat.ogg");
+        trombonSound = loadSound("trombon.ogg");
         nuzhdikiSound = loadSound("nuzhdiki.ogg");
     }
 
