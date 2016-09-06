@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import java.util.Random;
+import android.util.Log;
 
 
 public class ButtonActivity extends AppCompatActivity {
@@ -20,7 +21,8 @@ public class ButtonActivity extends AppCompatActivity {
     Random random = new Random();
 
 
-
+    //отрисовка Activity
+    //выполнение действий, которые необходимо выполнить сразу при отрисовке Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,22 +35,29 @@ public class ButtonActivity extends AppCompatActivity {
 
     }
 
+    //вызывается при клике на кнопке (likeButton)
     public void onLikeClick (View view) {
         //mp.stop();
+        Log.w("Before onLikeClick", "likeSound = " + likeSound);
 
         if (((RadioButton)findViewById(R.id.orderRadio)).isChecked()) {
             if(likeSound >= 4) {
                 likeSound = 1;
             }
             else likeSound++;
+
+            Log.w("Before play()", "likeSound = " + likeSound);
             play(likeSound);
         }
         else {
-            likeSound = random.nextInt(4);
+            likeSound = random.nextInt(3) + 1;
+            Log.w("Before play()", "likeSound = " + likeSound);
             play(likeSound);
         }
     }
 
+    //метод проигрывает звуковой файл в зависимости от порядкового номера файла,
+    //опеределенного при отработке метода onLikeClick
     public void play(int x) {
 
         if (mp != null) {
