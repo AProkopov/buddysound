@@ -1,59 +1,78 @@
 package com.example.android.buddysound;
 
-import android.content.res.AssetManager;
-import android.content.res.AssetFileDescriptor;
-import android.media.SoundPool;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
+
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.RadioButton;
+import java.util.Random;
 
-import java.io.IOException;
 
 public class ButtonActivity extends AppCompatActivity {
 
-    private SoundPool mSoundPool;
-    private AssetManager mAssetManager;
-    private int trombonSound;
-    private int nuzhdikiSound;
+    //переменные likeSound и dislikeSound используются для определения
+    //файла, который должен быть проигран
+    //необходимо в связи с проигрыванием файлов по порядку и произвольно
+    public int likeSound = 0;
+    public int dislikeSound = 0;
+    MediaPlayer mp;
+    Random random = new Random();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
-
-        mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
-
-        mAssetManager = getAssets();
-        trombonSound = loadSound("trombon.ogg");
-        nuzhdikiSound = loadSound("nuzhdiki.ogg");
+        ((RadioButton)findViewById(R.id.orderRadio)).setChecked(true);
     }
 
     public void onDislikeClick (View view) {
-        playSound(trombonSound);
+
+
     }
 
     public void onLikeClick (View view) {
-        playSound(nuzhdikiSound);
-    }
+        //mp.stop();
 
-    //присваиваем звукам ID (int)
-    private int loadSound(String fileName) {
-        AssetFileDescriptor afd = null;
-        try {
-            afd = mAssetManager.openFd(fileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Couldn't load file '" + fileName + "'", Toast.LENGTH_SHORT).show();
-            return -1;
+        if (((RadioButton)findViewById(R.id.orderRadio)).isChecked()) {
+            if(likeSound >= 4) {
+                likeSound = 1;
+            }
+            else likeSound++;
+            play(likeSound);
         }
-        return mSoundPool.load(afd, 1);
+        else {
+            likeSound = random.nextInt(4);
+            play(likeSound);
+        }
     }
 
-    protected void playSound(int sound) {
-        if (sound > 0)
-            mSoundPool.play(sound, 1, 1, 1, 0, 1);
+    public void play(int x) {
+
+        if (mp != null) {
+            mp.stop();
+        }
+
+        switch (x) {
+            case 1:
+                mp = MediaPlayer.create(this, R.raw.laugh_w);
+                mp.start();
+                break;
+            case 2:
+                mp = MediaPlayer.create(this, R.raw.benny);
+                mp.start();
+                break;
+            case 3:
+                mp = MediaPlayer.create(this, R.raw.radio_maximum);
+                mp.start();
+                break;
+            case 4:
+                mp = MediaPlayer.create(this, R.raw.applo);
+                mp.start();
+        }
     }
+
+
 }
