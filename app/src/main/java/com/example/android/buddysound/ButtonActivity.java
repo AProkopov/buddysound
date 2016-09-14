@@ -43,12 +43,12 @@ public class ButtonActivity extends AppCompatActivity {
             else dislikeSound++;
 
             Log.w("Before play()", "likeSound = " + dislikeSound);
-            playLike(dislikeSound);
+            playDisLike(dislikeSound);
         }
         else {
             dislikeSound = random.nextInt(7) + 1;
             Log.w("Before play()", "likeSound = " + dislikeSound);
-            playLike(dislikeSound);
+            playDisLike(dislikeSound);
         }
 
     }
@@ -65,12 +65,12 @@ public class ButtonActivity extends AppCompatActivity {
             else likeSound++;
 
             Log.w("Before play()", "likeSound = " + likeSound);
-            playDisLike(likeSound);
+            playLike(likeSound);
         }
         else {
             likeSound = random.nextInt(7) + 1;
             Log.w("Before play()", "likeSound = " + likeSound);
-            playDisLike(likeSound);
+            playLike(likeSound);
         }
     }
 
