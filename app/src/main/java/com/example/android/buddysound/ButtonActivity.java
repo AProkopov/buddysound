@@ -34,7 +34,7 @@ public class ButtonActivity extends AppCompatActivity {
     //вызывается при клике на кнопке (dislikeButton)
     public void onDislikeClick (View view) {
 
-        Log.w("Before onLikeClick", "likeSound = " + dislikeSound);
+        Log.w("Before onDislikeClick", "dislikeSound = " + dislikeSound);
 
         if (((RadioButton)findViewById(R.id.orderRadio)).isChecked()) {
             if(dislikeSound >= 8) {
@@ -42,12 +42,12 @@ public class ButtonActivity extends AppCompatActivity {
             }
             else dislikeSound++;
 
-            Log.w("Before play()", "likeSound = " + dislikeSound);
+            Log.w("Before play()", "dislikeSound = " + dislikeSound);
             playDisLike(dislikeSound);
         }
         else {
             dislikeSound = random.nextInt(7) + 1;
-            Log.w("Before play()", "likeSound = " + dislikeSound);
+            Log.w("Before play()", "dislikeSound = " + dislikeSound);
             playDisLike(dislikeSound);
         }
 
@@ -78,38 +78,47 @@ public class ButtonActivity extends AppCompatActivity {
     //опеределенного при отработке метода onLikeClick
     public void playLike(int x) {
 
-        if (mpLike != null) {
-            mpLike.stop();
-        }
+        try {
 
-        switch (x) {
-            case 1:
-                mpLike = MediaPlayer.create(this, R.raw.applause);
-                mpLike.start();
-                break;
-            case 2:
-                mpLike = MediaPlayer.create(this, R.raw.benny);
-                mpLike.start();
-                break;
-            case 3:
-                mpLike = MediaPlayer.create(this, R.raw.burunduk);
-                mpLike.start();
-                break;
-            case 4:
-                mpLike = MediaPlayer.create(this, R.raw.chgk);
-                mpLike.start();
-            case 5:
-                mpLike = MediaPlayer.create(this, R.raw.eralash);
-                mpLike.start();
-            case 6:
-                mpLike = MediaPlayer.create(this, R.raw.laugh);
-                mpLike.start();
-            case 7:
-                mpLike = MediaPlayer.create(this, R.raw.radiomax);
-                mpLike.start();
-            case 8:
-                mpLike = MediaPlayer.create(this, R.raw.shurik);
-                mpLike.start();
+            if (mpDislike != null) {
+                mpDislike.stop();
+            }
+
+            if (mpLike != null) {
+                mpLike.stop();
+                mpLike.reset();
+            }
+
+            switch (x) {
+                case 1:
+                    mpLike = MediaPlayer.create(this, R.raw.applause);
+                    break;
+                case 2:
+                    mpLike = MediaPlayer.create(this, R.raw.benny);
+                    break;
+                case 3:
+                    mpLike = MediaPlayer.create(this, R.raw.burunduk);
+                    break;
+                case 4:
+                    mpLike = MediaPlayer.create(this, R.raw.chgk);
+                    break;
+                case 5:
+                    mpLike = MediaPlayer.create(this, R.raw.eralash);
+                    break;
+                case 6:
+                    mpLike = MediaPlayer.create(this, R.raw.laugh);
+                    break;
+                case 7:
+                    mpLike = MediaPlayer.create(this, R.raw.radiomax);
+                    break;
+                case 8:
+                    mpLike = MediaPlayer.create(this, R.raw.shurik);
+                    break;
+            }
+
+            mpLike.start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -117,39 +126,49 @@ public class ButtonActivity extends AppCompatActivity {
     //опеределенного при отработке метода onDislikeClick
     public void playDisLike(int x) {
 
-        if (mpDislike != null) {
-            mpDislike.stop();
+        try {
+
+            if (mpLike != null) {
+                mpLike.stop();
+            }
+
+            if (mpDislike != null) {
+                mpDislike.stop();
+                mpDislike.reset();
+            }
+
+            switch (x) {
+                case 1:
+                    mpDislike = MediaPlayer.create(this, R.raw.cartoon);
+                    break;
+                case 2:
+                    mpDislike = MediaPlayer.create(this, R.raw.pooo_1);
+                    break;
+                case 3:
+                    mpDislike = MediaPlayer.create(this, R.raw.pooo_2);
+                    break;
+                case 4:
+                    mpDislike = MediaPlayer.create(this, R.raw.pooo_3);
+                    break;
+                case 5:
+                    mpDislike = MediaPlayer.create(this, R.raw.proval);
+                    break;
+                case 6:
+                    mpDislike = MediaPlayer.create(this, R.raw.riot);
+                    break;
+                case 7:
+                    mpDislike = MediaPlayer.create(this, R.raw.toilet);
+                    break;
+                case 8:
+                    mpDislike = MediaPlayer.create(this, R.raw.trombon);
+                    break;
+            }
+
+            mpDislike.start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        switch (x) {
-            case 1:
-                mpDislike = MediaPlayer.create(this, R.raw.cartoon);
-                mpDislike.start();
-                break;
-            case 2:
-                mpDislike = MediaPlayer.create(this, R.raw.pooo_1);
-                mpDislike.start();
-                break;
-            case 3:
-                mpDislike = MediaPlayer.create(this, R.raw.pooo_2);
-                mpDislike.start();
-                break;
-            case 4:
-                mpDislike = MediaPlayer.create(this, R.raw.pooo_3);
-                mpDislike.start();
-            case 5:
-                mpDislike = MediaPlayer.create(this, R.raw.proval);
-                mpDislike.start();
-            case 6:
-                mpDislike = MediaPlayer.create(this, R.raw.riot);
-                mpDislike.start();
-            case 7:
-                mpDislike = MediaPlayer.create(this, R.raw.toilet);
-                mpDislike.start();
-            case 8:
-                mpDislike = MediaPlayer.create(this, R.raw.trombon);
-                mpDislike.start();
-        }
     }
 
 }
