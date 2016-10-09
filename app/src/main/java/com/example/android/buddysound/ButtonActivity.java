@@ -91,7 +91,7 @@ public class ButtonActivity extends AppCompatActivity {
 
             switch (x) {
                 case 1:
-                    mpLike = MediaPlayer.create(this, R.raw.applause);
+                    mpLike = MediaPlayer.create(this, R.raw.radiomax);
                     break;
                 case 2:
                     mpLike = MediaPlayer.create(this, R.raw.benny);
@@ -109,7 +109,7 @@ public class ButtonActivity extends AppCompatActivity {
                     mpLike = MediaPlayer.create(this, R.raw.laugh);
                     break;
                 case 7:
-                    mpLike = MediaPlayer.create(this, R.raw.radiomax);
+                    mpLike = MediaPlayer.create(this, R.raw.applause);
                     break;
                 case 8:
                     mpLike = MediaPlayer.create(this, R.raw.shurik);
@@ -139,13 +139,13 @@ public class ButtonActivity extends AppCompatActivity {
 
             switch (x) {
                 case 1:
-                    mpDislike = MediaPlayer.create(this, R.raw.cartoon);
+                    mpDislike = MediaPlayer.create(this, R.raw.trombon);
                     break;
                 case 2:
                     mpDislike = MediaPlayer.create(this, R.raw.pooo_1);
                     break;
                 case 3:
-                    mpDislike = MediaPlayer.create(this, R.raw.pooo_2);
+                    mpDislike = MediaPlayer.create(this, R.raw.riot);
                     break;
                 case 4:
                     mpDislike = MediaPlayer.create(this, R.raw.pooo_3);
@@ -154,13 +154,13 @@ public class ButtonActivity extends AppCompatActivity {
                     mpDislike = MediaPlayer.create(this, R.raw.proval);
                     break;
                 case 6:
-                    mpDislike = MediaPlayer.create(this, R.raw.riot);
+                    mpDislike = MediaPlayer.create(this, R.raw.pooo_2);
                     break;
                 case 7:
                     mpDislike = MediaPlayer.create(this, R.raw.toilet);
                     break;
                 case 8:
-                    mpDislike = MediaPlayer.create(this, R.raw.trombon);
+                    mpDislike = MediaPlayer.create(this, R.raw.cartoon);
                     break;
             }
 

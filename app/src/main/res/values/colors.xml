@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="headOfApp">#7E57C2</color>
-    <color name="mainField">#2196F3</color>
-    <color name="likeButton">#A00ED581</color>
-    <color name="dislikeButton">#E57373</color>
+    <color name="mainField">#FFF3E0</color>
+    <color name="likeButton">#C5E1A5</color>
+    <color name="dislikeButton">#FFAB91</color>
+    <color name="TopColor">#B39DDB</color>
+    <color name="RadioText">#212121</color>
 </resources>

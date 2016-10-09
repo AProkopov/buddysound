@@ -5,13 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.buddysound.ButtonActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,18 +14,33 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:background="@color/TopColor"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/app_name"
+                android:textSize="32dp"
+                android:textColor="@color/mainField"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            android:layout_weight="3">
+            android:layout_weight="4">
 
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_thumb_up_black_24dp"
-
-                android:background="@drawable/rouncorner"
+                android:src="@mipmap/ic_thumb_up_black_48dp"
+                android:background="@color/likeButton"
                 android:onClick="onLikeClick"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
@@ -42,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_thumb_down_black_24dp"
+                android:src="@mipmap/ic_thumb_down_black_48dp"
                 android:background="@color/dislikeButton"
                 android:onClick="onDislikeClick"
                 android:layout_marginLeft="8dp"
@@ -51,16 +59,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="2">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/play_order"
-                android:layout_marginLeft="18dp"/>
 
             <RadioGroup
                 android:layout_width="wrap_content"
@@ -71,6 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/random_player"
+                    android:textColor="@color/RadioText"
+                    android:buttonTint="@color/TopColor"
                     android:layout_marginLeft="18dp"/>
 
                 <RadioButton
@@ -78,6 +83,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/post_order_player"
+                    android:textColor="@color/RadioText"
+                    android:buttonTint="@color/TopColor"
                     android:layout_marginLeft="18dp"/>
 
             </RadioGroup>
