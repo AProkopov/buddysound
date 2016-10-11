@@ -6,7 +6,9 @@
     <color name="headOfApp">#7E57C2</color>
     <color name="mainField">#E0E0E0</color>
     <color name="likeButton">#C5E1A5</color>
+    <color name="likeButtonPush">#AED581</color>
     <color name="dislikeButton">#FFAB91</color>
+    <color name="dislikeButtonPush">#FF8A65</color>
     <color name="TopColor">#283593</color>
     <color name="RadioText">#212121</color>
 </resources>
