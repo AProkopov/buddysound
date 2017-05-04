@@ -1,4 +1,4 @@
-package com.example.android.buddysound;
+package com.bugsnguns.android.buddysound;
 
 
 import android.media.MediaPlayer;
@@ -6,8 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
+
 import java.util.Random;
+
 import android.util.Log;
+
+import com.bugsnguns.android.buddysound.R;
 
 
 public class ButtonActivity extends AppCompatActivity {
@@ -28,24 +32,22 @@ public class ButtonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
-        ((RadioButton)findViewById(R.id.orderRadio)).setChecked(true);
+        ((RadioButton) findViewById(R.id.orderRadio)).setChecked(true);
     }
 
     //вызывается при клике на кнопке (dislikeButton)
-    public void onDislikeClick (View view) {
+    public void onDislikeClick(View view) {
 
         Log.w("Before onDislikeClick", "dislikeSound = " + dislikeSound);
 
-        if (((RadioButton)findViewById(R.id.orderRadio)).isChecked()) {
-            if(dislikeSound >= 8) {
+        if (((RadioButton) findViewById(R.id.orderRadio)).isChecked()) {
+            if (dislikeSound >= 8) {
                 dislikeSound = 1;
-            }
-            else dislikeSound++;
+            } else dislikeSound++;
 
             Log.w("Before play()", "dislikeSound = " + dislikeSound);
             playDisLike(dislikeSound);
-        }
-        else {
+        } else {
             dislikeSound = random.nextInt(7) + 1;
             Log.w("Before play()", "dislikeSound = " + dislikeSound);
             playDisLike(dislikeSound);
@@ -54,20 +56,18 @@ public class ButtonActivity extends AppCompatActivity {
     }
 
     //вызывается при клике на кнопке (likeButton)
-    public void onLikeClick (View view) {
+    public void onLikeClick(View view) {
 
         Log.w("Before onLikeClick", "likeSound = " + likeSound);
 
-        if (((RadioButton)findViewById(R.id.orderRadio)).isChecked()) {
-            if(likeSound >= 8) {
+        if (((RadioButton) findViewById(R.id.orderRadio)).isChecked()) {
+            if (likeSound >= 8) {
                 likeSound = 1;
-            }
-            else likeSound++;
+            } else likeSound++;
 
             Log.w("Before play()", "likeSound = " + likeSound);
             playLike(likeSound);
-        }
-        else {
+        } else {
             likeSound = random.nextInt(7) + 1;
             Log.w("Before play()", "likeSound = " + likeSound);
             playLike(likeSound);

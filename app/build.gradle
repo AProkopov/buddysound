@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.example.android.buddysound"
+        applicationId "com.bugsnguns.android.buddysound"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
